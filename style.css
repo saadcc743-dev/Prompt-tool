@@ -1,0 +1,66 @@
+/* QuickPrompt Dark Theme 🚀 */
+:root {
+    --neon-green: #00ff41;
+    --dark-bg: #121212;
+    --box-bg: #1e1e1e;
+    --text-white: #ffffff;
+    --text-gray: #b0b0b0;
+}
+
+body {
+    background-color: transparent; /* Blends with your white blog background */
+    margin: 0;
+    padding: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+#tool-container {
+    background-color: var(--dark-bg);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    max-width: 500px;
+    margin: auto;
+}
+
+#prompt-title {
+    color: var(--neon-green);
+    margin-top: 0;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.prompt-box {
+    background-color: var(--box-bg);
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#prompt-text {
+    color: var(--text-gray);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+#copy-btn {
+    background-color: var(--neon-green);
+    color: #000;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#copy-btn:hover {
+    filter: brightness(1.2);
+    transform: scale(1.02);
+}
