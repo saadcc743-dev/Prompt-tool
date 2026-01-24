@@ -6,7 +6,7 @@
     <title>QuickPrompt Tool</title>
     <link rel="stylesheet" href="style.css"/>
     <script>
-        // Security: Domain Lock & Redirection 🏠
+        // Security: Redirect to Blogspot if accessed directly 🏠
         if (window.top === window.self && !window.location.href.includes('localhost')) {
             window.location.href = 'https://quickpromptget.blogspot.com';
         }
@@ -14,9 +14,9 @@
 </head>
 <body>
     <div class="tool-container">
-        <h2 id="prompt-title">Prompt Ready</h2>
+        <h2 id="prompt-title">Prompt Generator</h2>
         <div class="prompt-box">
-            <p id="prompt-text">Click the button below to generate your prompt.</p>
+            <p id="prompt-text">Click generate to reveal the prompt.</p>
         </div>
         <div class="button-group">
             <button id="generate-btn" class="neon-button">Generate Prompt ⚡</button>
