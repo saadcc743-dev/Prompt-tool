@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>QuickPrompt Tool</title>
-    
+    <link rel="stylesheet" href="style.css"/>
     <script>
-        (function() {
-            var allowedDomain = "quickpromptget.blogspot.com"; 
-            try {
-                if (window.self === window.top || !document.referrer.includes(allowedDomain)) {
-                    window.location.href = "https://" + allowedDomain;
-                }
-            } catch (e) {
-                window.location.href = "https://" + allowedDomain;
-            }
-        })();
+        // Security: Domain Lock & Redirection 🏠
+        if (window.top === window.self && !window.location.href.includes('localhost')) {
+            window.location.href = 'https://quickpromptget.blogspot.com';
+        }
     </script>
-
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="tool-container">
-        <h2 id="prompt-title">Loading...</h2>
+    <div class="tool-container">
+        <h2 id="prompt-title">Prompt Ready</h2>
         <div class="prompt-box">
-            <pre id="prompt-text">Fetching your prompt details...</pre>
-            <button id="copy-btn">Copy Prompt</button>
+            <p id="prompt-text">Click the button below to generate your prompt.</p>
+        </div>
+        <div class="button-group">
+            <button id="generate-btn" class="neon-button">Generate Prompt ⚡</button>
+            <button id="copy-btn" class="neon-button" style="display: none;">Copy Prompt 📋</button>
         </div>
     </div>
     <script src="script.js"></script>
