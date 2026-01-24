@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let fullPromptText = "";
 
-    // Load prompt data from GitHub 📁
     fetch('prompts.json')
         .then(res => res.json())
         .then(data => {
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         copyBtn.style.display = 'none';
         textElement.textContent = "";
 
-        // Count words by splitting at spaces 🔠
         const words = fullPromptText.trim().split(/\s+/);
         
         if (words.length <= 500) {
@@ -45,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 finish(interval);
             }
-        }, 20); // 20ms per letter
+        }, 20); 
     }
 
     function typeWords(words) {
@@ -57,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 finish(interval);
             }
-        }, 50); // 50ms per word
+        }, 50); 
     }
 
     function finish(intervalId) {
@@ -69,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     generateBtn.addEventListener('click', generate);
 
-    // Copy to clipboard logic 📋
     copyBtn.addEventListener('click', () => {
         navigator.clipboard.writeText(textElement.textContent).then(() => {
             const original = copyBtn.textContent;
