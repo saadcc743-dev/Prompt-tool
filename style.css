@@ -15,7 +15,7 @@ body {
     border-radius: 20px;
     border: 2px solid #222;
     text-align: center;
-    width: 90%;
+    width: 95%;
     max-width: 480px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
@@ -27,7 +27,7 @@ body {
     margin-bottom: 25px;
     min-height: 120px;
     max-height: 300px;
-    overflow-y: auto; /* Adds scrollbar for long text 📜 */
+    overflow-y: auto;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
