@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickPrompt Tool</title>
+    
+    <script>
+        (function() {
+            var allowedDomain = "quickpromptget.blogspot.com"; 
+            try {
+                if (window.self === window.top || !document.referrer.includes(allowedDomain)) {
+                    window.location.href = "https://" + allowedDomain;
+                }
+            } catch (e) {
+                window.location.href = "https://" + allowedDomain;
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tool-container">
+        <h2 id="prompt-title">Loading...</h2>
+        <div class="prompt-box">
+            <pre id="prompt-text">Fetching your prompt details...</pre>
+            <button id="copy-btn">Copy Prompt</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
