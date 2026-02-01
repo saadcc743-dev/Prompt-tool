@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyBtn = document.getElementById('copy-btn');
 
     let fullPromptText = "";
+    const TARGET_TIME = 10000; // 10 seconds total ⏱️
 
     fetch('prompts.json')
         .then(res => res.json())
@@ -15,9 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 titleElement.textContent = data[promptId].title;
                 fullPromptText = data[promptId].text;
             } else {
-                titleElement.textContent = "Error: ID not found";
+                titleElement.textContent = "Error: Prompt Not Found";
                 generateBtn.style.display = 'none';
             }
+        })
+        .catch(() => {
+            titleElement.textContent = "Error: Connection Failed";
         });
 
     function generate() {
@@ -28,13 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const words = fullPromptText.trim().split(/\s+/);
         
         if (words.length <= 500) {
-            typeLetters();
+            const charDelay = TARGET_TIME / fullPromptText.length;
+            typeLetters(charDelay);
         } else {
-            typeWords(words);
+            const wordDelay = TARGET_TIME / words.length;
+            typeWords(words, wordDelay);
         }
     }
 
-    function typeLetters() {
+    function typeLetters(delay) {
         let i = 0;
         const interval = setInterval(() => {
             if (i < fullPromptText.length) {
@@ -43,10 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 finish(interval);
             }
-        }, 20); 
+        }, delay);
     }
 
-    function typeWords(words) {
+    function typeWords(words, delay) {
         let i = 0;
         const interval = setInterval(() => {
             if (i < words.length) {
@@ -55,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 finish(interval);
             }
-        }, 50); 
+        }, delay);
     }
 
     function finish(intervalId) {
